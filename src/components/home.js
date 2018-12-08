@@ -23,7 +23,7 @@ class Home extends React.Component{
   		var _this=this;
   		axios.get("http://localhost:3000/products")
   		.then(function(response){
-  			_this.setState({products:response.data});
+  			_this.setState({products:response.data?response.data:[]});
   			// console.log("response:",response.data);
   			// console.log("state:",_this.state.products);
   			

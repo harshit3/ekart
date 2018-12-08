@@ -43,7 +43,7 @@ class ProductDescription extends React.Component{
     		// console.log("in handle cart....")
     		var cartObject = localStorage.getItem("cart");
     		// console.log("cart items",cartObject)
-	      	if(cartObject==null){
+	      	if(cartObject===null || cartObject.length===0){
 		        cartObject=[];
 
 	  		    let product={
@@ -212,6 +212,7 @@ class ProductDescription extends React.Component{
 
 
     render(){
+		console.log(this.state.product)
 	    if(!(this.state.product.length==0)){
 		    var product = this.state.product[0];
 		    // console.log("product:",this.state.product[0]);
@@ -288,9 +289,10 @@ class ProductDescription extends React.Component{
 		    }
 
 
-
+			console.log("hello",product.discount)
 
 	    	if(product.discount>0){
+				console.log("here")
 		        var prodObject=this.state.product[0];
 		        var ekart_price=prodObject.price-prodObject.price*(prodObject.discount/100);
 		        ekart_price=Math.round(ekart_price);
@@ -336,6 +338,7 @@ class ProductDescription extends React.Component{
 
 
 		    else{
+				console.log("not here")
 		        var prodObject=this.state.product[0];
 		        var ekart_price=prodObject.price
 		        var qty_left = prodObject.quantity;

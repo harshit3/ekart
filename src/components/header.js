@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const logo = require("../logo.jpg");
 
 class Header extends React.Component{
 
@@ -55,7 +56,7 @@ class Header extends React.Component{
     }else{
       this.setState({isLoggedIn:false})  
       var cartObject = localStorage.getItem("cart");
-      if(cartObject===null){
+      if(cartObject===null || cartObject.length===0){
         this.setState({cartCount:0}); 
       }
       else{
@@ -89,7 +90,7 @@ class Header extends React.Component{
               <div className="navbar-brand">
                 <div className="row">
                   <div className="col-md-6">
-                      <img src={require("D:\\project1\\client\\src\\logo.jpg")} width="50px" height="50px" />
+                      <img src={logo} width="50px" height="50px" />
                   </div>
                   <div className="col-md-6">
                       <strong>EKART</strong>
@@ -147,7 +148,7 @@ class Header extends React.Component{
               <div className="navbar-brand">
                 <div className="row">
                   <div className="col-md-6">
-                      <img src={require("D:\\project1\\client\\src\\logo.jpg")} width="50px" height="50px" />
+                      <img src={logo} width="50px" height="50px" />
                   </div>
                   <div className="col-md-6">
                       <strong>EKART</strong>

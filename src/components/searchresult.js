@@ -62,7 +62,7 @@ class SearchResult extends React.Component{
 						    			}
 						    			return null;
 						    		});
-						    		var route='/products/'+prod.name;
+						    		var route='/products/'+prod.prod_id;
 						    		return(
 						    			<a href={route}>
 							    			<div className="col-md-3">
